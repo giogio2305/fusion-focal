@@ -12,7 +12,7 @@
 <body>
     <div class="itw">
         <div class="si">
-            <img src="./assets/placeholder.svg" alt="placeholder">
+            <img id ='slim' src="./assets/placeholder.svg" alt="placeholder">
         </div>
         <div class="st">
             <div class="slider single-item">
@@ -116,6 +116,14 @@ var percentTime;
     $('.item').click(function () {
     	clearInterval(tick);
     	var goToThisIndex = $(this).find("span").data("slickIndex");
+        // Update the image source based on the slick index
+        if (goToThisIndex === 0) {
+            // Change the image source to the new image for slick index 0
+            $('#slim').attr('src', './assets/placeholder.svg');
+        } else {
+            // Change the image source to the new image for slick index 1
+            $('#slim').attr('src', './assets/colored.png');
+        }
     	$('.single-item').slick('slickGoTo', goToThisIndex, false);
     	startProgressbar();
     });
