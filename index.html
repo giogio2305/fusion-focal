@@ -16,7 +16,7 @@
         </div>
         <div class="st">
             <div class="slider single-item">
-                <div class="slick-slider" data-slidernav="Item">
+                <div class="slick-slider" data-slidernav="Item" data-slick-index="0">
                     <h1 class="tt">
                         croquer la vie a pleines dents
                         </h1>
@@ -25,7 +25,7 @@
                         </p>
                 </div>
     
-                <div class="slick-slider" data-slidernav="Item">
+                <div class="slick-slider" data-slidernav="Item" data-slick-index="0">
                     <span class="sbt">Subheading</span>
                     <h1 class="tt">
                         IMAGE WITH TEXT
@@ -66,6 +66,18 @@
     speed: 800,
 
   });
+
+  $('.slider').on('afterChange', function(event, slick, currentSlide){
+  // Récupérer l'élément image de la diapositive actuelle
+  var currentImage = $('#slim');
+  var goToThisIndex = currentSlide;
+  // Changer la source de l'image
+  if (goToThisIndex === 0) {
+  currentImage.attr('src', './assets/placeholder.svg');
+  }else if (goToThisIndex === 1)  {
+    currentImage.attr('src', './assets/colored.png');
+  }
+});
 });
 
 var percentTime;
@@ -112,7 +124,6 @@ var percentTime;
     }
     startProgressbar();
     // End ticking machine
-
     $('.item').click(function () {
     	clearInterval(tick);
     	var goToThisIndex = $(this).find("span").data("slickIndex");
@@ -128,36 +139,7 @@ var percentTime;
     	startProgressbar();
     });
 
-    const copies = document.querySelectorAll(".tt");
 
-    function setupSplits(){
-        $(document).ready(function(){
-            $(".split-line").wrap("<div class='split-parent'></div>");
-        });
-
-        copies.forEach((copy)=>{
-            copy.split = new SplitText(copy, {
-                type: "lines, words, chars",
-                linesClass: "split-line",
-            });
-
-            copy.anim = gsap.fromTo(copy.split.lines,
-                        { 
-                            y: 100,
-                            opacity: 0
-                        },
-                        {
-                            y: 0,
-                            opacity: 1,
-                            stagger: 0.1,
-                            duration: 2,
-                            ease: 'power4.out',
-                        }
-)
-        })
-    }
-
-    setupSplits();
 </script>
 </body>
 </html>
