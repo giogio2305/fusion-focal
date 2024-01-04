@@ -26,8 +26,7 @@ body{
 }
 
 .itw {
-    width: 100%;
-    height: 100%;
+    padding: 64px 0 64px 0;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -41,14 +40,6 @@ body{
 }
 
 .st{
-    padding: 48px 0 48px 0;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.stm{
     max-width: 564px;
     display: flex;
     flex-direction: column;
@@ -73,10 +64,10 @@ body{
 .progressBarContainer{
     display: flex;
     align-items: center;
-    justify-content: end;
-    width: 50%;
+    justify-content: center;
+    width: 100%;
     height: auto;
-    margin-top: -8px;
+    margin-top: 32px;
 }
 .ibt{
     display: flex;
@@ -91,7 +82,6 @@ body{
     color: #282828;
     cursor: pointer;
     margin: 0 12px;
-    z-index: 1;
 }
 .ibt .progressBar{
     width: 32px;
@@ -136,20 +126,9 @@ body{
         height: 294px;
         margin-bottom: 28px;
     }
-    .slick-slider{
-        display: flex;
-        flex-direction: column;
-    }
-    .stm{
-        width: 320px;
-    }
-    .stm, .slick-slider{
+    .st, .slick-slider{
         font-size: 14px;
-        padding: 0 60px 0 60px !important;
-    }
-    .progressBarContainer{
-        width: 40%;
-        margin-top: 10px;
+        padding: 0 64px 0 64px !important;
     }
     .tt{
         font-size: 26px;
