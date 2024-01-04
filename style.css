@@ -41,6 +41,9 @@ body{
     height: 500px;
     background-color: #fff;
 }
+.si img {
+    transition: all 0.3s ease-in-out;
+}
 
 .st{
     max-width: 564px;

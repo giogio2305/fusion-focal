@@ -25,7 +25,7 @@
                         </p>
                 </div>
     
-                <div class="slick-slider" data-slidernav="Item" data-slick-index="0">
+                <div class="slick-slider" data-slidernav="Item" data-slick-index="1">
                     <span class="sbt">Subheading</span>
                     <h1 class="tt">
                         IMAGE WITH TEXT
@@ -63,7 +63,7 @@
     arrows: false,
     dots: false,
     autoplay: false,
-    speed: 800,
+    speed: 600,
 
   });
 
@@ -73,16 +73,16 @@
   var goToThisIndex = currentSlide;
   // Changer la source de l'image
   if (goToThisIndex === 0) {
-  currentImage.attr('src', './assets/placeholder.svg');
+    setTimeout(function() {currentImage.attr('src', './assets/placeholder.svg')}, 5);
   }else if (goToThisIndex === 1)  {
-    currentImage.attr('src', './assets/colored.png');
+    setTimeout(function() {currentImage.attr('src', './assets/colored.png')}, 5);
   }
 });
 });
 
 var percentTime;
     var tick;
-    var time = .1;
+    var time = .01;
     var progressBarIndex = 0;
 
     $('.progressBarContainer .progressBar').each(function(index) {
